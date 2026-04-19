@@ -9,7 +9,7 @@ export default function Nav() {
         </Link>
         <div className="ml-auto flex items-center gap-6 text-sm font-medium text-neutral-400">
           <Link href="/about" className="hover:text-neutral-200 transition-colors">About</Link>
-          <Link href="/projects" className="hover:text-neutral-200 transition-colors">Projects</Link>
+          <Link href="/project" className="hover:text-neutral-200 transition-colors">Projects</Link>
           <Link href="/contact" className="hover:text-neutral-200 transition-colors">Contact</Link>
         </div>
       </div>

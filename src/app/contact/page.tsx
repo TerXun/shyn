@@ -64,7 +64,7 @@ export default function Contact() {
             {splitToSpans("Contact", lettersRef)}
           </h1>
 
-          <div ref={listRef} className="w-full max-w-md bg-white/70 dark:bg-white/5 backdrop-blur-sm border border-neutral-200/40 dark:border-neutral-800/40 rounded-lg p-6 shadow-lg">
+          <div ref={listRef} className="w-full max-w-md bg-white/70 dark:bg-white/7 backdrop-blur-sm border border-neutral-200/40 dark:border-neutral-800/40 rounded-lg p-6 shadow-lg">
             <p className="mb-4 text-center text-sm text-neutral-600 dark:text-neutral-300">I'd love to hear from you.</p>
             <ul className="space-y-3">
               {CONTACT_ITEMS.map((c) => (

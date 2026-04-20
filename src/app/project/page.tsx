@@ -94,7 +94,7 @@ const Project = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-black text-neutral-900 dark:text-neutral-50 font-sans">
+    <div className="min-h-screen text-neutral-900 dark:text-neutral-50 font-sans">
       <main className="max-w-4xl mx-auto py-10 px-6" ref={containerRef}>
         <div className="space-y-16">
           {sections.map((section, i) => (

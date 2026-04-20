@@ -26,6 +26,7 @@ export default function Contact() {
   const headerRef = useRef<HTMLHeadingElement | null>(null);
   const lettersRef = useRef<Array<HTMLSpanElement | null>>([]);
   const listRef = useRef<HTMLDivElement | null>(null);
+  const resumeRef = useRef<HTMLAnchorElement | null>(null);
 
   useLayoutEffect(() => {
     if (!headerRef.current) return;
@@ -51,14 +52,22 @@ export default function Contact() {
         delay: 0.5,
         ease: "power2.out",
       });
+
+      gsap.from(resumeRef.current, {
+        y: 18,
+        opacity: 0,
+        duration: 0.7,
+        delay: 0.6,
+        ease: "power2.out",
+      });
     }, headerRef.current);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-zinc-50 dark:bg-black text-neutral-900 dark:text-neutral-50 font-sans">
-      <main className="w-full max-w-3xl px-6 py-24">
+    <div className="flex items-center justify-center text-neutral-900 dark:text-neutral-50 font-sans">
+      <main className="w-full max-w-3xl px-6 py-8">
         <div className="flex flex-col items-center gap-8">
           <h1 ref={headerRef} className="text-center text-6xl md:text-8xl font-extrabold leading-none tracking-tight">
             {splitToSpans("Contact", lettersRef)}
@@ -87,6 +96,21 @@ export default function Contact() {
               ))}
             </ul>
           </div>
+
+          <a 
+            ref={resumeRef}
+            href="/TerXun_Resume.pdf"
+            download="TerXun_Resume.pdf"
+            className="group flex items-center text-sm font-medium text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-neutral-50 transition-colors"
+          >
+            Download Resume
+            <span className="inline-block transform translate-x-0 translate-y-0 opacity-100 group-hover:translate-x-0.75 group-hover:-translate-y-0.75 transition-all duration-200 ease-out" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M7 17L17 7" />
+                <path d="M9 7h8v8" />
+              </svg>
+            </span>
+          </a>
 
           <p className="mt-6 text-xs text-neutral-500">Updated April 2026</p>
         </div>
